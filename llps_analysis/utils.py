@@ -54,7 +54,7 @@ def cal_chain_dists(
         ending_frames = len(mda.trajectory)
     assert starting_frame < ending_frames
     if prog_bar:
-        traj = tqdm(mda_u.trajectory[:ending_frames:every_n_frames])
+        traj = tqdm(mda_u.trajectory[:ending_frames:every_n_frames], desc=f"{label}")
     else:
         traj = mda_u.trajectory[:ending_frames:every_n_frames]
     for ts in traj:
